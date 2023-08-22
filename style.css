@@ -33,11 +33,23 @@ h3 {
     font-size: 1rem;
 }
 
+/* <top-contact> */
+.top-contact {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* </top-contact> */
+
 /* <navbar> */
 
 
 #navbar {
-    margin: 20px 0;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     z-index: 999;
@@ -74,11 +86,11 @@ h3 {
 }
 
 #nav-links > a:link, #nav-links > a:visited, #nav-links > a:active   {
-    color: var(--black);
+    color: var(--white);
 }
 
 #nav-links a:hover {
-    color: var(--red);
+    color: gray;
 }
 
 #nav-links .horizontal-line {
@@ -112,7 +124,7 @@ h3 {
 
 .our-offer > header {
     width: 40vw;
-    padding-right: 200px;
+    padding-right: 100px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -129,7 +141,7 @@ h3 {
     font-size: 1.2rem;
 }
 
-.our-offer {
+.our-offer-content {
     width: 60vw;
 }
 
@@ -244,13 +256,52 @@ h3 {
 /* <footer> */
 
 footer {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: space-between;
     background-color: var(--blue);
 }
 
+.footer-map-column {
+    width: 33vw
+}
+.footer-contact-column {
+    width: 33vw;
+}
 
+.footer-contact-form-column {
+    width: 33vw;
+}
+
+.footer-contact-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-contact-icons {
+    display: flex;
+}
+
+.footer-contact-icons > a {
+    color: var(--white);
+    transition: .2s;
+}
+
+.footer-contact-icons > a:hover {
+    color: var(--black);
+}
+
+.footer-contact-icons > a:not(:last-child) {
+    margin-right: 20px;
+
+}
+
+.footer-contact-icons > a > svg {
+    width: 30px;
+    height: 30px;
+}
 
 form {
     display: block;
@@ -329,6 +380,10 @@ textarea:focus-within {
 
 .check-box > input {
     width: initial;
+}
+
+.check-box > label {
+    color: var(--white);
 }
 
 #submit-button {
@@ -430,5 +485,32 @@ textarea:focus-within {
         width: 100%;
     }
     /* </our-offer> */
+
+
+    /* <footer> */
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .footer-map-column {
+        width: 100%;
+        height: 450px;
+    }
+
+    .footer-contact-column {
+        width: 100%;
+        height: 450px;
+    }
+
+    .footer-contact-form-column {
+        width: 80%;
+    }
+
+
+    /* </footer> */
 
 }
