@@ -36,12 +36,15 @@ h3 {
 /* <top-contact> */
 .top-contact {
     display: flex;
+    margin: 5px 0;
     padding: 0 20px;
     justify-content: space-between;
     align-items: center;
 }
 
-
+.top-contact > a {
+    color: var(--black);
+}
 
 /* </top-contact> */
 
