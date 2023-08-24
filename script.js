@@ -75,3 +75,45 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// map configuration
+if (ApiKEY === undefined) {
+    var ApiKEY = ""
+}
+
+let latAndLong = [22, 50.4]
+const map = tt.map({
+    key: ApiKEY,
+    container: "map",
+    center: latAndLong,
+    zoom: 10
+})
+
+var marker = new tt.Marker().setLngLat(latAndLong).addTo(map);
+
+var popupOffsets = {
+    top: [0, 0],
+    bottom: [0, -50],
+    'bottom-right': [0, -70],
+    'bottom-left': [0, -70],
+    left: [25, -35],
+    right: [-25, -35]
+}
+
+var popup = new tt.Popup({offset: popupOffsets}).setHTML('Polish your English, ul.Szkolna 20');
+marker.setPopup(popup).togglePopup();
+window.scrollTo(0, 0);
+
+
+// swiper configuration
+var swiper = new Swiper(".bg-slider", {
+    loop: true,
+    spaceBetween: 0,
+    autoplay: {
+        delay: 2500,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
