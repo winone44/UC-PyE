@@ -162,10 +162,10 @@ h3 {
 
 .swiper-slide .img-container {
     position: absolute;
-    right: 200px;
-    bottom: 200px;
-    width: 600px;
-    height: 400px;
+    right: 50px;
+    bottom: 50px;
+    width: 800px;
+    height: 600px;
     transform: translateX(50px);
     opacity: 0;
     border: 4px solid var(--blue);
@@ -189,10 +189,11 @@ h3 {
 }
 
 .swiper-slide .text-content {
+    padding: 10px;
     position: absolute;
-    top: 25%;
+    top: 25px;
     color: var(--black);
-    margin: 0 200px;
+    margin: 0 50px;
     width: 50%;
     background-color: var(--white);
     border-bottom: 4px solid var(--blue);
@@ -207,6 +208,10 @@ h3 {
     transition: 1s ease;
     transition-delay: 0.3s;
     transition-property: transform, opacity;
+}
+
+.text-content > p {
+    font-size: 1.7rem;
 }
 
 .swiper-slide .contact-btn {
@@ -666,9 +671,24 @@ textarea:focus-within {
 
     /* </navbar> */
     /* <first-section> */
+    .swiper-slide .img-container {
+        right: 0;
+        margin: 0 20px;
+        bottom: 20px;
+        width: 350px;
+        height: 300px;
+    }
+
     .swiper-slide .text-content {
+        top: 10%;
+        width: calc(100% - 90px);
         margin: 0 70px 0 20px;
     }
+
+    .text-content > p {
+        font-size: 1rem;
+    }
+
 
     /* </first-section> */
     /* <introduce> */
