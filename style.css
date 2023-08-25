@@ -44,6 +44,7 @@ h3 {
 
 .top-contact > a {
     color: var(--black);
+    text-decoration: none;
 }
 
 /* </top-contact> */
@@ -67,7 +68,7 @@ h3 {
 }
 
 .logo img {
-    height: 100%;
+    height: 50px;
 }
 
 #nav-links ul {
