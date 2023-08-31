@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItem = document.querySelector('.slider-item');
     const sliderWrapper = document.querySelector('.slider-wrapper');
+    const prevButton = document.querySelector('.slider-prev');
+    const nextButton = document.querySelector('.slider-next');
 
     const containerWidth = sliderContainer.clientWidth;
     const itemWidth = sliderItem.offsetWidth;
@@ -24,20 +26,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sliderWrapper.style.width = wrapperWidth + 'px';
 
+    function checkButtons() {
+        if (position === 0) {
+            prevButton.classList.add('disabled');
+        } else {
+            prevButton.classList.remove('disabled');
+        }
 
-    function moveSliderPrev() {
+        if (position === -(wrapperWidth - visibleWidth)) {
+            nextButton.classList.add('disabled');
+        } else {
+            nextButton.classList.remove('disabled');
+        }
+    }
+
+    checkButtons();
+
+    prevButton.addEventListener('click', function () {
         if (position !== 0) {
             position += itemWidth;
             sliderWrapper.style.transform = 'translateX(' + position + 'px)';
+            checkButtons();
         }
-    }
+    });
 
-    function moveSliderNext() {
+    nextButton.addEventListener('click', function () {
         if (position !== -(wrapperWidth - visibleWidth)) {
             position -= itemWidth;
             sliderWrapper.style.transform = 'translateX(' + position + 'px)';
+            checkButtons();
         }
-    }
+    });
 
     // Mobile
     let touchStartX = 0;
@@ -48,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     sliderWrapper.addEventListener('touchstart', function (event) {
-        touchStartX = event.touches[0].pageX;
+        touchStartX = event.touches[0].clientX;
     });
 
     sliderWrapper.addEventListener('mousemove', function (event) {
@@ -56,22 +75,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     sliderWrapper.addEventListener('touchmove', function (event) {
-        touchEndX = event.touches[0].pageX;
+        touchEndX = event.touches[0].clientX;
     });
 
     sliderWrapper.addEventListener('mouseup', function () {
         if (touchEndX < touchStartX) {
-            moveSliderNext();
+            nextButton.click();
         } else if (touchEndX > touchStartX) {
-            moveSliderPrev();
+            prevButton.click();
         }
     });
 
     sliderWrapper.addEventListener('touchend', function () {
         if (touchEndX < touchStartX) {
-            moveSliderNext();
+            nextButton.click();
         } else if (touchEndX > touchStartX) {
-            moveSliderPrev();
+            prevButton.click();
         }
     });
 });

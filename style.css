@@ -4,6 +4,7 @@
     --white: #fff;
     --black: #000;
     --grey: #ececec;
+    --red: #bc1f27;
 }
 
 
@@ -230,6 +231,26 @@ h3 {
 
 /* <introduce> */
 
+.introduce > header {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.introduce > header > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.introduce > header > div > h1 {
+    color: var(--blue);
+}
+
+.introduce > header > div > h2 {
+    color: var(--red);
+}
+
 .grid-item {
     width: 100%;
     height: 100%;
@@ -275,8 +296,7 @@ h3 {
 .grid-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 300px;
-    grid-auto-rows: 300px;
+    grid-template-rows: 600px;
 }
 
 .blue-layer::before {
@@ -367,6 +387,27 @@ h3 {
 
 #our-offer-button:hover {
     transform: scale(0.9);
+}
+
+.slider-nav {
+    display: flex;
+}
+
+.slider-nav > button {
+    background-color: rgba(0,0,0,0);
+    border: 0;
+    cursor: pointer;
+}
+
+.disabled {
+    color: var(--grey);
+}
+
+.slider-nav > p {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: bold;
 }
 
 
@@ -462,7 +503,7 @@ h3 {
 /* <footer> */
 
 footer {
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     justify-content: space-between;
     background-color: var(--blue);
@@ -479,6 +520,12 @@ footer {
 
 .footer-contact-form-column {
     width: 33vw;
+}
+
+.footer-contact-form-column > h2 {
+    color: var(--white);
+    text-align: center;
+    margin: 40px 0 0 0;
 }
 
 .footer-contact-column {
