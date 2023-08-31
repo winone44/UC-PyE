@@ -106,7 +106,7 @@ window.scrollTo(0, 0);
 
 
 // swiper configuration
-var swiper = new Swiper(".bg-slider", {
+var swiper = new Swiper(".main-slider", {
     loop: true,
     spaceBetween: 0,
     autoplay: {

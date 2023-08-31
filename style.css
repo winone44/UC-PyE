@@ -148,14 +148,14 @@ h3 {
     color: var(--black);
 }
 
-.bg-slider {
+.main-slider {
     z-index: 777;
     position: relative;
     width: 100%;
     min-height: 730px;
 }
 
-.bg-slider .swiper-slide {
+.main-slider .swiper-slide {
     position: relative;
     width: 100%;
     height: 730px;
@@ -673,9 +673,9 @@ textarea:focus-within {
     /* </navbar> */
     /* <first-section> */
     .swiper-slide .img-container {
-        right: 0;
+        right: 20px;
         margin: 0 20px;
-        bottom: 20px;
+        bottom: 30px;
         width: 300px;
         height: 250px;
     }
