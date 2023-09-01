@@ -212,8 +212,14 @@ h3 {
     transition-property: transform, opacity;
 }
 
+.text-content > div {
+    width: 40%;
+    float: left;
+}
+
 .text-content > p {
     font-size: 1.7rem;
+    clear: both;
 }
 
 .swiper-slide .contact-btn {
@@ -731,6 +737,10 @@ textarea:focus-within {
         top: 10%;
         width: calc(100% - 90px);
         margin: 0 70px 0 20px;
+    }
+
+    .text-content > div {
+        width: 100px;
     }
 
     .text-content > p {
